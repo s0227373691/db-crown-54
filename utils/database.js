@@ -3,10 +3,10 @@ const { Pool } = require('pg')
 const isProduction = process.env.NODE_ENV === 'production'
 
 let pool;
-if(isProduction){
-    pool = new Pool({ 
-        connectionString: process.env.DATABSE_URL,
-        ssl: {rejectUnauthorized: false}
+if (isProduction) {
+    pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false }
     })
 } else {
     pool = new Pool({
