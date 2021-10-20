@@ -1,9 +1,9 @@
 const serviceCrown2Controller_54 = require('./serviceCrown2Controller_54')
 
-exports.getCategories = (req, res) => {
+exports.getCategories = async (req, res) => {
     try {
-        let results = await serviceCrown2Controller_54.getCategories();
-        console.log('results', JSON.stringify(results));
+        const data = await serviceCrown2Controller_54.getCategories();
+        return res.json(data)
     } catch (err) {
         console.log('crown2Controller getCategories', err)
     }
